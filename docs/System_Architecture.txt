@@ -1,0 +1,59 @@
+===========================================================================
+CAMPUSPULSE: SYSTEM DATA FLOW ARCHITECTURE
+
+[ MODULE 1: STUDENT ORDER FLOW (ONLINE) ]
+
+STUDENT APP (TypeScript/React)
+|
+|--[ HTTPS Request + JWT Token ]-->
+|
+
+BACKEND API (Python/Django)
+|
+|--[ AUTH CHECK ]: Validates JWT session.
+|--[ PENALTY CHECK ]: Queries PostgreSQL for active student flags.
+|--[ INVENTORY CHECK ]: Verifies stock availability via Gemini Analytics.
+|
+|--[ DATA PERSISTENCE ]-->
+|
+
+DATABASE (PostgreSQL)
+|-- Stores: Order Details, Transaction IDs, User Penalty Flags.
+
+[ MODULE 2: VERIFICATION & HYBRID BRIDGE (SCANNING) ]
+
+STUDENT TOKEN (Generated in App)
+|
+|--[ Offline Decryption Payload ]-->
+|
+
+COUNTER STAFF SCANNER (Mobile/Tablet)
+|
+|--[ C++ CORE ENGINE ]: High-speed, low-latency QR decryption.
+|--[ VALIDATION ]: Checks Time-To-Live (TTL) and cryptographic signature.
+|
+
+PHYSICAL TRIGGER
+|
+|--[ API CALLBACK ]: Notifies Django to mark order as "Collected".
+|--[ THERMAL PRINT ]: Triggers physical slip for kitchen preparation.
+
+[ MODULE 3: SKILL SWAP (COMMUNITY) ]
+
+STUDENT PROFILE
+|
+|--[ POST Skill ]--> Django Backend --> PostgreSQL (Skill Table)
+|
+
+MATCHING ENGINE
+|
+|--[ Search/Filter ]--> Real-time peer-to-peer discovery.
+
+===========================================================================
+TECHNICAL STACK SUMMARY
+
+Frontend:  TypeScript, Tailwind CSS
+Backend:   Python, Django, PostgreSQL
+Logic:     C++ (Verification Engine)
+AI:        Gemini Pro (Stock Forecasting)
+Security:  JWT, Cryptographic TTL Tokens
