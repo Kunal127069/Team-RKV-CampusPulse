@@ -102,7 +102,7 @@ Kunal: Lead Architect & API Integration
 
 Ripunjay: Backend Development & Quality Assurance
 
-Vardaan: UI/UX & Frontend Development (TypeScript Specialist)
+Vardaan: UI/UX & Frontend Development 
 
 
 This project was developed for the Innovate 3.0: Hack to Build Hackathon at JIIT Wishtown.
