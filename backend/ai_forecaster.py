@@ -3,7 +3,6 @@ from datetime import datetime
 
 """
 CAMPUSPULSE: AI INVENTORY FORECASTING ENGINE
-Lead Architect: Kunal
 Integrated AI: Google Gemini 2.5 Flash Simulation
 
 Purpose: This module analyzes historical student traffic patterns 
